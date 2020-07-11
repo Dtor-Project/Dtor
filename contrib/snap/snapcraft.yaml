@@ -1,0 +1,76 @@
+name: dtor
+version: 0.1.0.0
+summary: "Dtor: the secure, private, untraceable cryptocurrency http://dtor.org"
+description: |
+    Dtor: a fairly launched privacy-centric meme coin with no premine and a finite supply.
+grade: devel
+confinement: strict
+
+apps:
+    dtord:
+        daemon: forking
+        command: |
+          dtord-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/dtord.conf
+        plugs:
+            - network
+            - network-bind
+    dtor-wallet-rpc:
+        command: |
+          dtor-wallet-rpc --log-file ${SNAP_USER_DATA}
+        plugs:
+            - home
+            - network
+            - network-bind
+    dtor-wallet-cli:
+        command: |
+          dtor-wallet-cli --log-file ${SNAP_USER_DATA}
+        plugs:
+            - home
+            - network
+
+parts:
+    cmake-build:
+        plugin: cmake
+        configflags:
+            - -DBDB_STATIC=1
+            - -DBoost_USE_STATIC_LIBS=1
+            - -DBoost_USE_STATIC_RUNTIME=1
+            - -DARCH=default
+        source: .
+        build-packages:
+            - gcc
+            - pkg-config
+            - libunbound-dev
+            - libevent-dev
+            - libboost-all-dev
+            - libzmqpp-dev
+            - libzmq3-dev
+            - libsodium-dev
+            - libdb-dev
+            - libunwind-dev
+            - libminiupnpc-dev
+            - libldns-dev
+            - libexpat1-dev
+            - libreadline6-dev
+            - bison
+            - doxygen
+            - graphviz
+        stage-packages:
+            - libminiupnpc10
+            - libunbound2
+            - libunwind8
+        prime:
+            - bin
+            - usr/lib/
+            - -usr/lib/gcc
+            - -usr/share
+
+    dist-files:
+        plugin: dump
+        source: .
+        organize:
+            contrib/snap/dtord.conf: etc/dtord.conf
+            contrib/snap/dtord-wrapper: bin/dtord-wrapper
+        prime:
+            - etc
+            - bin
