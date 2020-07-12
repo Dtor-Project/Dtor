@@ -620,7 +620,7 @@ namespace nodetool
     else
     {
       full_addrs.insert("149.28.197.99:23467");
-      full_addrs.insert("95.179.142.203:23467");
+      full_addrs.insert("95.179.159.238:23467");
     }
     return full_addrs;
   }
