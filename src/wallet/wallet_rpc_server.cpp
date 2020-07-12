@@ -4421,8 +4421,7 @@ public:
     << "  |_____/ 7__7___/|_|          runone        "<< ENDL 
     << "  " << ENDL);                  
       MGINFO_YELLOW(ENDL << "**********************************************************************" << ENDL
-      << "Caution: Dtor is highly experimental software compiled by another ragtag team of stoners." << ENDL
-      << "Storing your life savings in DTOR is probably not a good idea." << ENDL
+      << "!!Danger!!: Dtor is highly experimental software. Storing any money you dont need in DTOR is probably not a good idea." << ENDL
       << "**********************************************************************" << ENDL);
 
     try
