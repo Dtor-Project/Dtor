@@ -1680,9 +1680,9 @@ namespace cryptonote
     {
       std::string main_message;
       if (m_offline)
-        main_message = "The daemon is running offline and will not attempt to sync to the Monero network.";
+        main_message = "The daemon is running offline and will not attempt to sync to the Dtor network.";
       else
-        main_message = "The daemon will start synchronizing with the network. This may take a long time to complete.";
+        main_message = "The daemon will start synchronizing with the network. This may take a bit of time to complete.";
       MGINFO_BLUE(ENDL <<
        "   _____  _    ************:)                "<< ENDL       
     << "  |  __ 7| |                                 "<< ENDL       
@@ -1694,7 +1694,7 @@ namespace cryptonote
       MGINFO_YELLOW(ENDL << "**********************************************************************" << ENDL
         << main_message << ENDL
         << ENDL
-        << "Caution: Dtor is highly experimental software. Storing any money in DTOR is probably not a good idea." << ENDL
+        << "!!Danger!!: Dtor is highly experimental software. Storing any money you dont need in DTOR is probably not a good idea." << ENDL
         << ENDL
         << "You can set the level of process detailization through \"set_log <level|categories>\" command," << ENDL
         << "where <level> is between 0 (no details) and 4 (very verbose), or custom category based levels (eg, *:WARNING)." << ENDL
