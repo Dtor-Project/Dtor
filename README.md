@@ -34,7 +34,7 @@ Tor Peers
 
 ## Introduction
 
-Dtor is an expermintal privacy-centric coin that launched on August 1, 2020 with no pre-mine, stealth-mine or ICO. Dtor has a maximum supply of around 18.4 million Dtor with a slow and steady emission over 50 years. It is a fork of Monero, but with its own genesis block, and direction to travel. There is no degradation of privacy due to ring signatures using different participants for the same tx outputs on opposing forks.
+Dtor is an expermintal privacy-centric coin that launched on August 1, 2020 with no pre-mine, stealth-mine or ICO. Dtor has a maximum supply of around 18.4 million with a slow and steady emission over 50 years. It is a fork of Monero, but with its own genesis block, and direction of travel deviating from a direct course. There is no degradation of privacy due to ring signatures using different participants for the same tx outputs on opposing forks.
 
 ## Scheduled software upgrades
 
