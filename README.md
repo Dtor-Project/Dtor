@@ -20,6 +20,7 @@ Blockchain Explorers
 - http://95.179.159.238:8081/
 
 Free Public Nodes
+- TBD
 - .onion:23468
 - :23468 (US)
 - :23468 (CAN)
@@ -27,6 +28,7 @@ Free Public Nodes
 - :23468 (UK)
 
 Tor Peers
+- COMMING SOON?
 - .onion
 - .onion
 
