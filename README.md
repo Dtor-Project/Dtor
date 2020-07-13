@@ -62,7 +62,8 @@ Packages are available for
 
 TBD
 
-## Building from Source  'have only tested Ubuntu-07-2020'
+## Building from Source  
+'only tested Ubuntu 18.04. 07-2020'
 
 * Arch Linux/Manjaro
 
