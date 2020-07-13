@@ -12,7 +12,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 ## Resources
 
 - Web: [dtor.org](http://dtor.org)
-- Twitter: [dt0r](https://twitter.com/dt0r)
+- Twitter: [_dt0r](https://twitter.com/_dt0r)
 - Mail: [dtor-dev@protonmail.com](mailto:dtor-dev@protonmail.com)
 - GitHub: [https://github.com/Dtor-Project/dtor](https://github.com/Dtor-Project/dtor)
 
