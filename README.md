@@ -1,5 +1,5 @@
-# EXPERIMENTIAL!!!!!MAGIC INTERNET MONEY ;)
-
+# EXPERIMENTAL!!!!!MAGICial INTERNET MONEY ;)
+ user beware
 # Dtor -  deviation from a direct course! ↪️
 
 Copyright (c) 2020 Dtor Project.   
