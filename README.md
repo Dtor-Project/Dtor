@@ -43,7 +43,7 @@ Dates are provided in the format YYYY-MM-DD.
 
 | Software upgrade block height | Date       | Release Name | Minimum Dtor version | Recommended Dtor version | Details                                                                            |  
 | ------------------------------ | -----------| ----------------- | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
-| 1                              | 2018-04-01 | Runone                | v0.1.0.0               | v0.1.0.0                  | Cryptonight variant 2, LWMA v2, ringsize = 22, MMS sorted inputs
+| 1                              | 2020-08-01 | Runone                | v0.1.0.0               | v0.1.0.0                  | Cryptonight variant 2, LWMA v2, ringsize = 22, MMS sorted inputs
 
 
 X's indicate that these details have not been determined as of commit date.
