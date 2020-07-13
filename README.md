@@ -1,4 +1,4 @@
-
+# EXPERIMENTIAL!!!!!MAGIC INTERNET MONEY ;)
 
 # Dtor -  deviation from a direct course! ↪️
 
@@ -58,35 +58,9 @@ If you have a fix or code change, feel free to submit it as a pull request. Ahea
 
 Packages are available for
 
-* Arch Linux/Manjaro
+TBD
 
-        yay -S dtor-git
-
-* Gentoo
-
-        emerge --noreplace eselect-repository
-        eselect repository enable dtor
-        emaint sync -r dtor
-        echo '*/*::dtor ~amd64' >> /etc/portage/package.accept_keywords
-        emerge net-p2p/dtor
-
-* NixOS
-
-        nix-shell -p dtor
-
-* Ubuntu 18.04/Ubuntu 16.04/Debian 9/Debian 8 (amd64)
-
-        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8BC34ABB48E565F0
-        sudo add-apt-repository "deb http://ppa.dtor.org/ bionic main"
-        sudo apt-get update
-        sudo apt-get install dtor
-
-Packaging for your favorite distribution would be a welcome contribution!
-
-**DISCLAIMER: These packages are not part of this repository, and as such, do not go through the same review process to ensure their trustworthiness and security.**
-
-
-## Building from Source
+## Building from Source  'have only tested Ubuntu-07-2020'
 
 * Arch Linux/Manjaro
 
