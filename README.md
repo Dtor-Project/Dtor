@@ -1,5 +1,4 @@
-# EXPERIMENTAL!!!!!MAGICial INTERNET MONEY ;)
- user beware
+
 # Dtor -  deviation from a direct course! ↪️
 
 Copyright (c) 2020 Dtor Project.   
@@ -17,7 +16,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 - GitHub: [https://github.com/Dtor-Project/dtor](https://github.com/Dtor-Project/dtor)
 
 Blockchain Explorers
-- http://95.179.159.238:8081/
+- http://45.77.187.49:8081/
 
 Free Public Nodes
 - TBD
