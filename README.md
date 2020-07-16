@@ -16,7 +16,8 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 - GitHub: [https://github.com/Dtor-Project/dtor](https://github.com/Dtor-Project/dtor)
 
 Blockchain Explorers
-- http://45.77.187.49:8081/
+- http://45.76.250.127:8081/
+- http://45.76.194.159:8081/
 
 Free Public Nodes
 - TBD
