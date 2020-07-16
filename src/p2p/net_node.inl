@@ -619,8 +619,10 @@ namespace nodetool
     }
     else
     {
-      full_addrs.insert("149.28.197.99:23467");
-      full_addrs.insert("95.179.159.238:23467");
+      full_addrs.insert("45.77.187.49:23467");
+      full_addrs.insert("45.76.250.127:23467");
+      full_addrs.insert("192.248.147.11:23467");
+      full_addrs.insert("45.76.194.159:23467");
     }
     return full_addrs;
   }
