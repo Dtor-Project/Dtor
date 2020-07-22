@@ -619,7 +619,7 @@ namespace nodetool
     }
     else
     {
-      full_addrs.insert("45.77.6.117:23467");
+      full_addrs.insert("45.77.2.36:23467");
       full_addrs.insert("45.63.4.7:23467");
       full_addrs.insert("78.141.207.97:23467");
       full_addrs.insert("45.32.32.199:23467");
