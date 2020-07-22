@@ -201,9 +201,9 @@ namespace config
   uint64_t const DEFAULT_DUST_THRESHOLD = ((uint64_t)2000000000); // 2 * pow(10, 9)
   uint64_t const BASE_REWARD_CLAMP_THRESHOLD = ((uint64_t)100000000); // pow(10, 8)
 
-  uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 0x3f48dc;
-  uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x3adb;
-  uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 0x31dc;
+  uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 0x11ff59;
+  uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x5257;
+  uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 0x2;
   uint16_t const P2P_DEFAULT_PORT = 23467;
   uint16_t const RPC_DEFAULT_PORT = 23468;
   uint16_t const ZMQ_RPC_DEFAULT_PORT = 23469;
@@ -211,7 +211,7 @@ namespace config
       0x11, 0x33, 0xFF, 0x77 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x10
     } }; // Bender's nightmare
   std::string const GENESIS_TX = "013c01ff0001ffffffffff1f0223496e8935f97a3a2cd7d67b8fae9a4eae9690768e756d7c615dd6a92b6fc59221015c78e6c1eeddd793aefc6b424e01ec3c669fd31200423d364fd3aea298a09407";
-  uint32_t const GENESIS_NONCE = 10131225;
+  uint32_t const GENESIS_NONCE = 420;
 
   // Hash domain separators
   const char HASH_KEY_BULLETPROOF_EXPONENT[] = "bulletproof";
@@ -236,7 +236,7 @@ namespace config
         0x11, 0x33, 0xFF, 0x77 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x11
       } }; // Bender's daydream
     std::string const GENESIS_TX = "";
-    uint32_t const GENESIS_NONCE = 420;
+    uint32_t const GENESIS_NONCE = 10131225;
   }
 
   namespace stagenet
