@@ -17,7 +17,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 Blockchain Explorers
 - http://explorer.dtor.org/
-- http://45.63.4.7:8081/
+- http://dtorexplorer.2xminer.com/
 
 Free Public Nodes
 - TBD
