@@ -14,6 +14,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 - Twitter: [_dt0r](https://twitter.com/_dt0r)
 - Mail: [dtor-dev@protonmail.com](mailto:dtor-dev@protonmail.com)
 - GitHub: [https://github.com/Dtor-Project/dtor](https://github.com/Dtor-Project/dtor)
+- Discord: [https://discord.gg/m54wz8p} (https://discord.gg/m54wz8p)
 
 Blockchain Explorers
 - http://explorer.dtor.org/
