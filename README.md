@@ -24,7 +24,7 @@ Free Public Nodes
 - .onion:23468
 - :23468 (US)
 - :23468 (CAN)
-- :23468 (IN)
+- :23468 (KP)
 - :23468 (UK)
 
 Tor Peers
