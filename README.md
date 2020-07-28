@@ -147,4 +147,4 @@ Donations may also be sent to:
 
 XMR: `45cg5muo2tTWCxWy2iRcMsSsLUCjx3zQYGGwWuAhDTUWMUGgY2U5nbb252SGDFLm2JjCyVCsoypCNfBw3WiN2nduKp4c2Sw`
 
-BTC: `3JLkCYa8UcBn1TR9sVbPZXz1PCcdo3kupP`
+BTC: `3LdXni6x4Dcgqo1nEkzxH7jRFY8sb6Gejb`
