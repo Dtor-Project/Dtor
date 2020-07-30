@@ -10,15 +10,25 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 ## Resources
 
-- Web: [dtor.org](http://dtor.org)
+- Web: [dtor.org](https://dtor.org)
+- Onion Website: 7thcayn4rncexumxgqdywhcbgy7mkkeds3qf7hucjvk65nbwdcqsgzad.onion
 - Twitter: [_dt0r](https://twitter.com/_dt0r)
 - Mail: [dtor-dev@protonmail.com](mailto:dtor-dev@protonmail.com)
 - GitHub: [https://github.com/Dtor-Project/dtor](https://github.com/Dtor-Project/dtor)
 - Discord: [https://discord.gg/m54wz8p](https://discord.gg/m54wz8p)
 
+Wallets
+- Linux core: https://github.com/Dtor-Project/dtor
+- Windows: coming sometime soon
+- Address generator code: https://github.com/Dtor-Project/dtor-wallet-generator
+- Tor address generator *currently uses java*: w6xhwegzaz6jtffzhvc4ydydsipq4h3dfxh2lwcvtx7gedvlswwgrtid.onion
+- Address generator: https://wallet.dtor.org/
+
 Blockchain Explorers
 - http://explorer.dtor.org/
 - http://dtorexplorer.2xminer.com/
+- hi5krmoe2lht2yjxpt35qdmpabxf6u6voil55r3agevkzurusvnrzqid.onion
+- uwahbjl6ncief2cv3mukp2jer443llhlwd6wteoghiove2xasxrum2id.onion
 
 Free Public Nodes
 - TBD
