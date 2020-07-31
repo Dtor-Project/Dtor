@@ -21,8 +21,8 @@ Wallets
 - Linux core: https://github.com/Dtor-Project/dtor
 - Windows: coming sometime soon
 - Address generator code: https://github.com/Dtor-Project/dtor-wallet-generator
-- Tor address generator *currently uses java*: w6xhwegzaz6jtffzhvc4ydydsipq4h3dfxh2lwcvtx7gedvlswwgrtid.onion
 - Address generator: https://wallet.dtor.org/
+- Tor address generator *currently uses java*: w6xhwegzaz6jtffzhvc4ydydsipq4h3dfxh2lwcvtx7gedvlswwgrtid.onion
 
 Blockchain Explorers
 - http://explorer.dtor.org/
