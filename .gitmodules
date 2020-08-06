@@ -1,6 +1,4 @@
-[submodule "external/unbound"]
-	path = external/unbound
-	url = https://github.com/Dtor-Project/unbound
+
 [submodule "external/rapidjson"]
 	path = external/rapidjson
 	url = https://github.com/Dtor-Project/rapidjson
