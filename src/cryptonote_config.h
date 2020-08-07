@@ -226,16 +226,16 @@ namespace config
 
   namespace testnet
   {
-    uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 53;
-    uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 54;
-    uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 63;
+    uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 0x31;
+    uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x6;
+    uint64_t const CRYPTONOTE_PUBLIC_SUBADDRESS_BASE58_PREFIX = 0x2;
     uint16_t const P2P_DEFAULT_PORT = 33467;
     uint16_t const RPC_DEFAULT_PORT = 33468;
     uint16_t const ZMQ_RPC_DEFAULT_PORT = 33469;
     boost::uuids::uuid const NETWORK_ID = { {
         0x11, 0x33, 0xFF, 0x77 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x11
       } }; // Bender's daydream
-    std::string const GENESIS_TX = "013c01ff0001ffffffffff1f02d201d373772ea314759f553fddfce094206451fbc75b31b5015f450b95eb9b9e210106b7b7f34cfc762a43e396f94fe1feb8aa9ea9d45b7e0fbd5ec77822901a91f7";
+    std::string const GENESIS_TX = "013c01ff0001ffffffffff1f02382e4b90c8f6d31d4cd6c106eed413c2976cb928aed480a1468b3a049d0c473f21010e966f599cba77f5e2f3dd0b62cfc1a89a668e0921e2e5a3a73bc9b746f1279b";
     uint32_t const GENESIS_NONCE = 421;
   }
 
