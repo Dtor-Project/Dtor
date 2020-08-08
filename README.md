@@ -55,7 +55,6 @@ Dates are provided in the format YYYY-MM-DD.
 | Software upgrade block height | Date       | Release Name | Minimum Dtor version | Recommended Dtor version | Details                                                                            |  
 | ------------------------------ | -----------| ----------------- | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
 | 1                              | 2020-08-01 | Runone                | v0.1.0.0               | v0.1.0.0                  | Ringsize = 22, MMS sorted inputs
-| 7500                           | 2020-08-07 | runx                  | v0.1.0.1               | v0.1.0.1                  | Implement RandomX algorithm
 
 X's indicate that these details have not been determined as of commit date.
 
