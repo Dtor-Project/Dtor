@@ -33,14 +33,14 @@
 
 const hardfork_t mainnet_hard_forks[] = {
   { 7, 1, 0, 1519605000 },
-  { 15, 7500, 0, 1573280497 },
+  { 12, 7500, 0, 1573280497 },
 
 };
 const size_t num_mainnet_hard_forks = sizeof(mainnet_hard_forks) / sizeof(mainnet_hard_forks[0]);
 
 const hardfork_t testnet_hard_forks[] = {
   { 7, 1, 0, 1519605000 },
-  { 15, 25, 0, 1573280497 },
+  { 12, 25, 0, 1573280497 },
 
 };
 const size_t num_testnet_hard_forks = sizeof(testnet_hard_forks) / sizeof(testnet_hard_forks[0]);
@@ -48,7 +48,7 @@ const size_t num_testnet_hard_forks = sizeof(testnet_hard_forks) / sizeof(testne
 const hardfork_t stagenet_hard_forks[] = {
   // version 1 from the start of the blockchain
   { 7, 1, 0, 1519605000 },
-  { 15, 25, 0, 1573280497 },
+  { 12, 25, 0, 1573280497 },
 
 
 };
