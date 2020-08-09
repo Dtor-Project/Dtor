@@ -80,7 +80,7 @@ TBD
         sudo pacman -Syu && sudo pacman -S base-devel cmake boost openssl zeromq libpgm unbound libsodium git libusb systemd
         git clone https://github.com/Dtor-Project/dtor
         cd dtor
-        make -j2
+        make
 
 
 * Debian/Ubuntu
