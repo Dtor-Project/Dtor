@@ -74,7 +74,7 @@ Packages are available for
 TBD
 
 ## Building from Source  
-'Tested on Ubuntu 18.04 & 16.04. 08-2020'
+'Build tested on Ubuntu x64: 18.04 & 16.04 & 20.04
 
 * Arch Linux/Manjaro
 
