@@ -54,8 +54,8 @@ Dates are provided in the format YYYY-MM-DD.
 
 | Software upgrade block height | Date       | Release Name | Minimum Dtor version | Recommended Dtor version | Details                                                                            |  
 | ------------------------------ | -----------| ----------------- | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
-| 1                              | 2020-08-01 | Runone                | v0.1.0.0               | v0.1.0.0                  | Ringsize = 22, MMS sorted inputs
-| 10000                           | 2020-08-07 | runx                  | v0.1.0.1               | v0.1.0.1                  | Implement RandomX algorithm
+| 1                              | 2020-08-01 | Runone                | v0.1.0.0               | v0.1.0.0                  | Cryptonight v7, MMS sorted inputs
+| 10000                          | 2020-08-07 | runx                  | v0.2.0.0               | v0.2.0.0                  | Implement RandomX algorithm, Ringsize 22
 
 X's indicate that these details have not been determined as of commit date.
 
@@ -89,7 +89,7 @@ TBD
         sudo apt update && sudo apt install build-essential cmake pkg-config libboost-all-dev libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libldns-dev libexpat1-dev libpgm-dev libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler libudev-dev git
         git clone https://github.com/Dtor-Project/dtor
         cd dtor
-        make -j2
+        make
 
 #### On Windows:
 
