@@ -240,7 +240,7 @@ HiddenServicePort 44568 127.0.0.1:44568
 ./dtor-wallet-cli --proxy 127.0.0.1:9150 --daemon-address dtorxxxxx.onion:34568
 ```
 
-Use port `9050` instead of `9150` if you installed Tor as a standalone daemon. For more information, check out [ANONYMITY_NETWORKS](https://github.com/Dtor-Project/dtor/src/branch/master/ANONYMITY_NETWORKS.md).
+Use port `9050` instead of `9150` if you installed Tor as a standalone daemon. For more information, check out [ANONYMITY_NETWORKS](https://github.com/Dtor-Project/dtor/blob/master/ANONYMITY_NETWORKS.md).
 
 ## Donating to Dtor District Project
 
