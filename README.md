@@ -77,17 +77,16 @@ TBD
 ## Building from Source  
 'Build tested on Ubuntu x64: 16.04 & 18.04 & 20.04 & Kali Linux
 
-* Arch Linux/Manjaro
-
-        sudo pacman -Syu && sudo pacman -S base-devel cmake boost openssl zeromq libpgm unbound libsodium git libusb systemd
-        git clone https://github.com/Dtor-Project/dtor
-        cd dtor
-        make
-
-
 * Debian/Ubuntu
 
         sudo apt update && sudo apt install build-essential cmake pkg-config libboost-all-dev libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind8-dev liblzma-dev libreadline6-dev libldns-dev libexpat1-dev libpgm-dev libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler libudev-dev git
+        git clone https://github.com/Dtor-Project/dtor
+        cd dtor
+        make
+	
+* Arch Linux/Manjaro
+
+        sudo pacman -Syu && sudo pacman -S base-devel cmake boost openssl zeromq libpgm unbound libsodium git libusb systemd
         git clone https://github.com/Dtor-Project/dtor
         cd dtor
         make
