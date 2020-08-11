@@ -75,7 +75,7 @@ Packages are available for
 TBD
 
 ## Building from Source  
-'Build tested on Ubuntu x64: 16.04 & 18.04 & 20.04
+'Build tested on Ubuntu x64: 16.04 & 18.04 & 20.04 & Kali Linux
 
 * Arch Linux/Manjaro
 
