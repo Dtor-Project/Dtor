@@ -242,9 +242,9 @@ HiddenServicePort 44568 127.0.0.1:44568
 
 Use port `9050` instead of `9150` if you installed Tor as a standalone daemon. For more information, check out [ANONYMITY_NETWORKS](https://github.com/Dtor-Project/dtor/blob/master/ANONYMITY_NETWORKS.md).
 
-## Donating to Dtor District Project
+## Donating to the Dtor Project
 
-Developers are volunteers doing this mostly for shits and giggles. If you would like to support our shenanigans and stimulant addictions, please consider donating 
+Developers are volunteers doing this mostly for shits and giggles. If you would like to support our shenanigans, please consider donating 
 
 Donations may also be sent to: 
 
