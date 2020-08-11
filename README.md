@@ -18,8 +18,8 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 - Discord: [https://discord.gg/m54wz8p](https://discord.gg/m54wz8p)
 
 Wallets
-- Linux core: https://github.com/Dtor-Project/dtor
-- Windows: coming sometime soon
+- Core wallet: https://github.com/Dtor-Project/dtor
+- Linux & Windows binaries: https://github.com/Dtor-Project/dtor/releases
 - Address generator code: https://github.com/Dtor-Project/dtor-wallet-generator
 - Address generator: https://wallet.dtor.org/
 - Tor address generator *currently uses java*: w6xhwegzaz6jtffzhvc4ydydsipq4h3dfxh2lwcvtx7gedvlswwgrtid.onion
