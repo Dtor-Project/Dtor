@@ -54,7 +54,9 @@ Dates are provided in the format YYYY-MM-DD.
 
 | Software upgrade block height | Date       | Release Name | Minimum Dtor version | Recommended Dtor version | Details                                                                            |  
 | ------------------------------ | -----------| ----------------- | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
-| 1                              | 2020-08-01 | Runone                | v0.1.0.0               | v0.1.0.0                  | Ringsize = 22, MMS sorted inputs
+| 1                              | 2020-08-01 | Runone                | v0.1.0.0               | v0.1.0.0                  | Cryptonight v7, MMS sorted inputs
+| 10000                          | 2020-08-07 | runx                  | v0.2.0.0               | v0.2.0.0                  | Implement RandomX algorithm, Ringsize 22
+
 
 X's indicate that these details have not been determined as of commit date.
 
@@ -73,7 +75,7 @@ Packages are available for
 TBD
 
 ## Building from Source  
-'Tested on Ubuntu 18.04 & 16.04. 08-2020'
+'Build tested on Ubuntu x64: 16.04 & 18.04 & 20.04
 
 * Arch Linux/Manjaro
 
@@ -239,7 +241,7 @@ HiddenServicePort 44568 127.0.0.1:44568
 ./dtor-wallet-cli --proxy 127.0.0.1:9150 --daemon-address dtorxxxxx.onion:34568
 ```
 
-Use port `9050` instead of `9150` if you installed Tor as a standalone daemon. For more information, check out [ANONYMITY_NETWORKS](https://github.com/Dtor-Project/dtor/src/branch/master/ANONYMITY_NETWORKS.md).
+Use port `9050` instead of `9150` if you installed Tor as a standalone daemon. For more information, check out [ANONYMITY_NETWORKS](https://github.com/Dtor-Project/dtor/blob/master/ANONYMITY_NETWORKS.md).
 
 ## Donating to Dtor District Project
 
