@@ -14,7 +14,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 - Onion Website: 7thcayn4rncexumxgqdywhcbgy7mkkeds3qf7hucjvk65nbwdcqsgzad.onion
 - Twitter: [_dt0r](https://twitter.com/_dt0r)
 - Mail: [dtor-dev@protonmail.com](mailto:dtor-dev@protonmail.com)
-- GitHub: [https://github.com/Dtor-Project/dtor](https://github.com/Dtor-Project/dtor)
+- GitHub: [https://github.com/Dtor-Project](https://github.com/Dtor-Project)
 - Discord: [https://discord.gg/m54wz8p](https://discord.gg/m54wz8p)
 
 Wallets
