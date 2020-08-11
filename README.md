@@ -156,7 +156,7 @@ application.
 * If you would like a specific [version/tag](https://github.com/Dtor-Project/dtor/tags), do a git checkout for that version. eg. 'v0.1.0.1'. If you don't care about the version and just want binaries from master, skip this step:
 	
     ```bash
-    git checkout v0.1.0.1
+    git checkout v0.2.0.0
     ```
 
 * If you are on a 64-bit system, run:
