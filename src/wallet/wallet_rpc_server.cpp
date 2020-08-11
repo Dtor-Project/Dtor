@@ -4419,6 +4419,7 @@ public:
     << "  | |  | | __/ _ 7| '__|                     "<< ENDL 
     << "  | |__| | || (_) | |                        "<< ENDL 
     << "  |_____/ 7__7___/|_|        runx 0.2.0.0    "<< ENDL 
+
     << "  " << ENDL);                  
       MGINFO_YELLOW(ENDL << "**********************************************************************" << ENDL
       << "!!Danger!!: Dtor is highly experimental software. Storing any money you dont need in DTOR is probably not a good idea." << ENDL

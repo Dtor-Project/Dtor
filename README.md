@@ -57,6 +57,7 @@ Dates are provided in the format YYYY-MM-DD.
 | 1                              | 2020-08-01 | Runone                | v0.1.0.0               | v0.1.0.0                  | Cryptonight v7, MMS sorted inputs
 | 10000                          | 2020-08-07 | runx                  | v0.2.0.0               | v0.2.0.0                  | Implement RandomX algorithm, Ringsize 22
 
+
 X's indicate that these details have not been determined as of commit date.
 
 \* indicates estimate as of commit date
@@ -81,7 +82,7 @@ TBD
         sudo pacman -Syu && sudo pacman -S base-devel cmake boost openssl zeromq libpgm unbound libsodium git libusb systemd
         git clone https://github.com/Dtor-Project/dtor
         cd dtor
-        make -j2
+        make
 
 
 * Debian/Ubuntu
