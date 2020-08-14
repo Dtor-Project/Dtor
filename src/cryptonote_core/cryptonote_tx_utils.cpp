@@ -665,9 +665,8 @@ namespace cryptonote
     bl.minor_version = CURRENT_BLOCK_MINOR_VERSION;
     bl.timestamp = 0;
     bl.nonce = nonce;
-    miner::find_nonce_for_given_block([](const cryptonote::block &b, uint64_t height, unsigned int threads, crypto::hash &hash){
-      return cryptonote::get_block_longhash(NULL, b, hash, height, threads);
-    }, bl, 1, 0);
+    miner::find_nonce_for_given_block(bl, 1, 0);
+    miner::find_nonce_for_given_block(NULL, bl, 1, 0);
     bl.invalidate_hashes();
     return true;
   }
@@ -681,7 +680,16 @@ namespace cryptonote
   bool get_block_longhash(const Blockchain *pbc, const block& b, crypto::hash& res, const uint64_t height, const int miners)
   {
     blobdata bd = get_block_hashing_blob(b);
-    if (b.major_version >= RX_BLOCK_VERSION)
+    crypto::cn_slow_hash_type cn_type = cn_slow_hash_type::cn_original;
+    if (b.major_version == CRYPTONOTE_HEAVY_BLOCK_VERSION)
+    {
+      cn_type = cn_slow_hash_type::cn_heavy;
+    }
+    else if (b.major_version >= HF_VERSION_BP){
+      cn_type = cn_slow_hash_type::cn_r;
+    }
+    const int pow_variant = b.major_version >= HF_VERSION_BP ? b.major_version - 3 : 0;
+    if (pow_variant >= 6)
     {
       uint64_t seed_height, main_height;
       crypto::hash hash;
@@ -698,8 +706,7 @@ namespace cryptonote
       }
       rx_slow_hash(main_height, seed_height, hash.data, bd.data(), bd.size(), res.data, miners, 0);
     } else {
-      const int pow_variant = b.major_version >= 11 ? 4 : b.major_version >= 9 ? 2 : 1;
-      crypto::cn_slow_hash(bd.data(), bd.size(), res, pow_variant, height);
+      crypto::cn_slow_hash(bd.data(), bd.size(), res, pow_variant, height, cn_type);
     }
     return true;
   }
