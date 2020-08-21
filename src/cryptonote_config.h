@@ -81,7 +81,7 @@
 #define DIFFICULTY_TARGET                               120
 #define DIFFICULTY_TARGET_V2                            120
 #define DIFFICULTY_TARGET_V1                            120
-#define DIFFICULTY_WINDOW_V3                            144
+#define DIFFICULTY_WINDOW_V3                            60
 #define DIFFICULTY_WINDOW_V2                            60
 #define DIFFICULTY_WINDOW                               60 // blocks
 #define DIFFICULTY_LAG                                  15  // !!!
