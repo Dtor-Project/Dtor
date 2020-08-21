@@ -78,14 +78,14 @@
 
 #define ORPHANED_BLOCKS_MAX_COUNT                       100
 
-#define DIFFICULTY_TARGET                            120
+#define DIFFICULTY_TARGET                               120
 #define DIFFICULTY_TARGET_V2                            120
 #define DIFFICULTY_TARGET_V1                            120
-#define DIFFICULTY_WINDOW_V3                            144
+#define DIFFICULTY_WINDOW_V3                            60
 #define DIFFICULTY_WINDOW_V2                            60
-#define DIFFICULTY_WINDOW                               720 // blocks
+#define DIFFICULTY_WINDOW                               60 // blocks
 #define DIFFICULTY_LAG                                  15  // !!!
-#define DIFFICULTY_CUT                                  60  // timestamps to cut after sorting
+#define DIFFICULTY_CUT                                  20  // timestamps to cut after sorting
 #define DIFFICULTY_BLOCKS_COUNT_V3                      DIFFICULTY_WINDOW_V3 + 1 // added +1 to make N=N
 #define DIFFICULTY_BLOCKS_COUNT_V2                      DIFFICULTY_WINDOW_V2 + 1 // added +1 to make N=N
 #define DIFFICULTY_BLOCKS_COUNT                         DIFFICULTY_WINDOW + DIFFICULTY_LAG
@@ -169,15 +169,15 @@
 #define HF_VERSION_MIN_MIXIN_7                  7
 #define HF_VERSION_MIN_MIXIN_21                 9
 #define HF_VERSION_ENFORCE_RCT                  6
-#define HF_VERSION_PER_BYTE_FEE                 12
-#define HF_VERSION_SMALLER_BP                   13
-#define HF_VERSION_LONG_TERM_BLOCK_WEIGHT       13
-#define HF_VERSION_MIN_2_OUTPUTS                15
-#define HF_VERSION_MIN_V2_COINBASE_TX           15
-#define HF_VERSION_SAME_MIXIN                   15
-#define HF_VERSION_REJECT_SIGS_IN_COINBASE      15
-#define HF_VERSION_ENFORCE_MIN_AGE              15
-#define HF_VERSION_EFFECTIVE_SHORT_TERM_MEDIAN_IN_PENALTY 15
+#define HF_VERSION_PER_BYTE_FEE                 8
+#define HF_VERSION_SMALLER_BP                   10
+#define HF_VERSION_LONG_TERM_BLOCK_WEIGHT       10
+#define HF_VERSION_MIN_2_OUTPUTS                12
+#define HF_VERSION_MIN_V2_COINBASE_TX           12
+#define HF_VERSION_SAME_MIXIN                   12
+#define HF_VERSION_REJECT_SIGS_IN_COINBASE      12
+#define HF_VERSION_ENFORCE_MIN_AGE              12
+#define HF_VERSION_EFFECTIVE_SHORT_TERM_MEDIAN_IN_PENALTY 12
 #define PER_KB_FEE_QUANTIZATION_DECIMALS        8
 
 #define HASH_OF_HASHES_STEP                     512
