@@ -851,7 +851,7 @@ start:
   uint64_t height;
   auto new_top_hash = get_tail_id(height); // get it again now that we have the lock
   ++height;
-  uint8_t version = get_current_hard_fork_version():
+  uint8_t version = get_current_hard_fork_version();
   if (!(new_top_hash == top_hash)) D=0;
   ss << "Re-locked, height " << height << ", tail id " << new_top_hash << (new_top_hash == top_hash ? "" : " (different)") << std::endl;
   top_hash = new_top_hash;
@@ -864,7 +864,7 @@ start:
   bool check = false;
   if (m_reset_timestamps_and_difficulties_height)
     m_timestamps_and_difficulties_height = 0;
-  if (m_timestamps_and_difficulties_height != 0 && ((height - m_timestamps_and_difficulties_height) == 1) && m_timestamps.size() >= difficulty_blocks_count)
+  if (m_timestamps_and_difficulties_height != 0 && ((height - m_timestamps_and_difficulties_height) == 1) && m_timestamps.size() >= DIFFICULTY_BLOCKS_COUNT)
   {
     uint64_t index = height - 1;
     m_timestamps.push_back(m_db->get_block_timestamp(index));
