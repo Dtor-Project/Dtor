@@ -83,7 +83,7 @@
 #define DIFFICULTY_TARGET_V1                            120
 #define DIFFICULTY_WINDOW_V3                            144
 #define DIFFICULTY_WINDOW_V2                            60
-#define DIFFICULTY_WINDOW                               720 // blocks
+#define DIFFICULTY_WINDOW                               60 // blocks
 #define DIFFICULTY_LAG                                  15  // !!!
 #define DIFFICULTY_CUT                                  60  // timestamps to cut after sorting
 #define DIFFICULTY_BLOCKS_COUNT_V3                      DIFFICULTY_WINDOW_V3 + 1 // added +1 to make N=N
