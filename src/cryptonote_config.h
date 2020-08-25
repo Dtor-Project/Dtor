@@ -166,11 +166,13 @@
 
 #define HF_VERSION_DYNAMIC_FEE                  4
 #define HF_VERSION_MIN_MIXIN_4                  6
+#define HF_VERSION_MIN_MIXIN_6                  7
 #define HF_VERSION_MIN_MIXIN_7                  7
+#define HF_VERSION_MIN_MIXIN_10                 8
 #define HF_VERSION_MIN_MIXIN_21                 9
 #define HF_VERSION_ENFORCE_RCT                  6
-#define HF_VERSION_PER_BYTE_FEE                 12
-#define HF_VERSION_SMALLER_BP                   12
+#define HF_VERSION_PER_BYTE_FEE                 10
+#define HF_VERSION_SMALLER_BP                   10
 #define HF_VERSION_LONG_TERM_BLOCK_WEIGHT       12
 #define HF_VERSION_MIN_2_OUTPUTS                12
 #define HF_VERSION_MIN_V2_COINBASE_TX           12
