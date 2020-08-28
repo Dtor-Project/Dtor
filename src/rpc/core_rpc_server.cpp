@@ -27,6 +27,7 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // 
 // Parts of this file are originally copyright (c) 2012-2013 The Cryptonote developers
+
 #include <boost/preprocessor/stringize.hpp>
 #include <boost/uuid/nil_generator.hpp>
 #include "include_base_utils.h"
@@ -55,20 +56,27 @@ using namespace epee;
 #include "core_rpc_server_error_codes.h"
 #include "p2p/net_node.h"
 #include "version.h"
+
 #undef MONERO_DEFAULT_LOG_CATEGORY
 #define MONERO_DEFAULT_LOG_CATEGORY "daemon.rpc"
+
 #define MAX_RESTRICTED_FAKE_OUTS_COUNT 40
 #define MAX_RESTRICTED_GLOBAL_FAKE_OUTS_COUNT 5000
+
 #define OUTPUT_HISTOGRAM_RECENT_CUTOFF_RESTRICTION (3 * 86400) // 3 days max, the wallet requests 1.8 days
+
 #define DEFAULT_PAYMENT_DIFFICULTY 1000
 #define DEFAULT_PAYMENT_CREDITS_PER_HASH 100
+
 #define RESTRICTED_BLOCK_HEADER_RANGE 1000
 #define RESTRICTED_TRANSACTIONS_COUNT 100
 #define RESTRICTED_SPENT_KEY_IMAGES_COUNT 5000
 #define RESTRICTED_BLOCK_COUNT 1000
+
 #define RPC_TRACKER(rpc) \
   PERF_TIMER(rpc); \
   RPCTracker tracker(#rpc, PERF_TIMER_NAME(rpc))
+
 namespace
 {
   class RPCTracker
@@ -386,6 +394,7 @@ namespace cryptonote
     return true;
   }
 #define CHECK_CORE_READY() do { if(!check_core_ready()){res.status =  CORE_RPC_STATUS_BUSY;return true;} } while(0)
+
   //------------------------------------------------------------------------------------------------------------------------------
   bool core_rpc_server::on_get_height(const COMMAND_RPC_GET_HEIGHT::request& req, COMMAND_RPC_GET_HEIGHT::response& res, const connection_context *ctx)
   {
@@ -762,7 +771,8 @@ namespace cryptonote
       outkey.mask = epee::string_tools::pod_to_hex(i.mask);
       outkey.unlocked = i.unlocked;
       outkey.height = i.height;
-      outkey.txid = epee::string_tools::pod_to_hex(i.txid);
+      if (req.get_txid)
+        outkey.txid = epee::string_tools::pod_to_hex(i.txid);
     }
 
     res.status = CORE_RPC_STATUS_OK;
@@ -1110,11 +1120,23 @@ namespace cryptonote
   bool core_rpc_server::on_send_raw_tx(const COMMAND_RPC_SEND_RAW_TX::request& req, COMMAND_RPC_SEND_RAW_TX::response& res, const connection_context *ctx)
   {
     RPC_TRACKER(send_raw_tx);
-    bool ok;
-    if (use_bootstrap_daemon_if_necessary<COMMAND_RPC_SEND_RAW_TX>(invoke_http_mode::JON, "/sendrawtransaction", req, res, ok))
-      return ok;
 
-    CHECK_CORE_READY();
+    const bool restricted = m_restricted && ctx;
+
+    bool skip_validation = false;
+    if (!restricted)
+    {
+      boost::shared_lock<boost::shared_mutex> lock(m_bootstrap_daemon_mutex);
+      if (m_bootstrap_daemon.get() != nullptr)
+      {
+        skip_validation = !check_core_ready();
+      }
+      else
+      {
+        CHECK_CORE_READY();
+      }
+    }
+
     CHECK_PAYMENT_MIN1(req, res, COST_PER_TX_RELAY, false);
 
     std::string tx_blob;
@@ -1129,53 +1151,54 @@ namespace cryptonote
     {
       res.status = "Failed";
       res.reason = "Sanity check failed";
-      res.sanity_check_failed = false;
+      res.sanity_check_failed = true;
       return true;
     }
     res.sanity_check_failed = false;
 
-    const bool restricted = m_restricted && ctx;
-
-    tx_verification_context tvc{};
-    if(!m_core.handle_incoming_tx({tx_blob, crypto::null_hash}, tvc, (req.do_not_relay ? relay_method::none : relay_method::local), false) || tvc.m_verifivation_failed)
+    if (!skip_validation)
     {
-      res.status = "Failed";
-      std::string reason = "";
-      if ((res.low_mixin = tvc.m_low_mixin))
-        add_reason(reason, "bad ring size");
-      if ((res.double_spend = tvc.m_double_spend))
-        add_reason(reason, "double spend");
-      if ((res.invalid_input = tvc.m_invalid_input))
-        add_reason(reason, "invalid input");
-      if ((res.invalid_output = tvc.m_invalid_output))
-        add_reason(reason, "invalid output");
-      if ((res.too_big = tvc.m_too_big))
-        add_reason(reason, "too big");
-      if ((res.overspend = tvc.m_overspend))
-        add_reason(reason, "overspend");
-      if ((res.fee_too_low = tvc.m_fee_too_low))
-        add_reason(reason, "fee too low");
-      if ((res.too_few_outputs = tvc.m_too_few_outputs))
-        add_reason(reason, "too few outputs");
-      const std::string punctuation = reason.empty() ? "" : ": ";
-      if (tvc.m_verifivation_failed)
+      tx_verification_context tvc{};
+      if(!m_core.handle_incoming_tx({tx_blob, crypto::null_hash}, tvc, (req.do_not_relay ? relay_method::none : relay_method::local), false) || tvc.m_verifivation_failed)
       {
-        LOG_PRINT_L0("[on_send_raw_tx]: tx verification failed" << punctuation << reason);
+        res.status = "Failed";
+        std::string reason = "";
+        if ((res.low_mixin = tvc.m_low_mixin))
+          add_reason(reason, "bad ring size");
+        if ((res.double_spend = tvc.m_double_spend))
+          add_reason(reason, "double spend");
+        if ((res.invalid_input = tvc.m_invalid_input))
+          add_reason(reason, "invalid input");
+        if ((res.invalid_output = tvc.m_invalid_output))
+          add_reason(reason, "invalid output");
+        if ((res.too_big = tvc.m_too_big))
+          add_reason(reason, "too big");
+        if ((res.overspend = tvc.m_overspend))
+          add_reason(reason, "overspend");
+        if ((res.fee_too_low = tvc.m_fee_too_low))
+          add_reason(reason, "fee too low");
+        if ((res.too_few_outputs = tvc.m_too_few_outputs))
+          add_reason(reason, "too few outputs");
+        const std::string punctuation = reason.empty() ? "" : ": ";
+        if (tvc.m_verifivation_failed)
+        {
+          LOG_PRINT_L0("[on_send_raw_tx]: tx verification failed" << punctuation << reason);
+        }
+        else
+        {
+          LOG_PRINT_L0("[on_send_raw_tx]: Failed to process tx" << punctuation << reason);
+        }
+        return true;
       }
-      else
-      {
-        LOG_PRINT_L0("[on_send_raw_tx]: Failed to process tx" << punctuation << reason);
-      }
-      return true;
-    }
 
-    if(tvc.m_relay == relay_method::none)
-    {
-      LOG_PRINT_L0("[on_send_raw_tx]: tx accepted, but not relayed");
-      res.reason = "Not relayed";
-      res.not_relayed = true;
-      res.status = CORE_RPC_STATUS_OK;
-      return true;
+      if(tvc.m_relay == relay_method::none)
+      {
+        LOG_PRINT_L0("[on_send_raw_tx]: tx accepted, but not relayed");
+        res.reason = "Not relayed";
+        res.not_relayed = true;
+        res.status = CORE_RPC_STATUS_OK;
+        return true;
+      }
     }
 
     NOTIFY_NEW_TRANSACTIONS::request r;
@@ -1276,14 +1299,14 @@ namespace cryptonote
     if (lMiner.is_mining() || lMiner.get_is_background_mining_enabled())
       res.address = get_account_address_as_str(nettype(), false, lMiningAdr);
     const uint8_t major_version = m_core.get_blockchain_storage().get_current_hard_fork_version();
-    const unsigned variant = major_version >= 13 ? 6 : major_version >= 11 && major_version <= 12 ? 4 : 2;
+    const unsigned variant = major_version >= 7 ? major_version - 6 : 0;
     switch (variant)
     {
       case 0: res.pow_algorithm = "Cryptonight"; break;
       case 1: res.pow_algorithm = "CNv1 (Cryptonight variant 1)"; break;
       case 2: case 3: res.pow_algorithm = "CNv2 (Cryptonight variant 2)"; break;
-      case 4: case 5: res.pow_algorithm = "CNv4"; break;
-      case 6: res.pow_algorithm = "RandomX"; break;
+      case 4: case 5: res.pow_algorithm = "CNv4 (Cryptonight variant 4)"; break;
+      case 6: case 7: res.pow_algorithm = "RandomX"; break;
       default: res.pow_algorithm = "I'm not sure actually"; break;
     }
     if (res.is_background_mining_enabled)
@@ -2444,14 +2467,13 @@ namespace cryptonote
     {
       for (const auto &str: req.txids)
       {
-        cryptonote::blobdata txid_data;
-        if(!epee::string_tools::parse_hexstr_to_binbuff(str, txid_data))
+        crypto::hash txid;
+        if(!epee::string_tools::hex_to_pod(str, txid))
         {
           failed = true;
         }
         else
         {
-          crypto::hash txid = *reinterpret_cast<const crypto::hash*>(txid_data.data());
           txids.push_back(txid);
         }
       }
@@ -2617,6 +2639,7 @@ namespace cryptonote
     RPC_TRACKER(set_limit);
     // -1 = reset to default
     //  0 = do not modify
+
     if (req.limit_down > 0)
     {
       epee::net_utils::connection_basic::set_rate_down_limit(req.limit_down);
@@ -2690,6 +2713,7 @@ namespace cryptonote
     static const char buildtag[] = "source";
     static const char subdir[] = "source";
 #endif
+
     if (req.command != "check" && req.command != "download" && req.command != "update")
     {
       res.status = std::string("unknown command: '") + req.command + "'";
@@ -2794,15 +2818,14 @@ namespace cryptonote
     res.status = "";
     for (const auto &str: req.txids)
     {
-      cryptonote::blobdata txid_data;
-      if(!epee::string_tools::parse_hexstr_to_binbuff(str, txid_data))
+      crypto::hash txid;
+      if(!epee::string_tools::hex_to_pod(str, txid))
       {
         if (!res.status.empty()) res.status += ", ";
         res.status += std::string("invalid transaction id: ") + str;
         failed = true;
         continue;
       }
-      crypto::hash txid = *reinterpret_cast<const crypto::hash*>(txid_data.data());
 
       cryptonote::blobdata txblob;
       if (m_core.get_pool_transaction(txid, txblob, relay_category::legacy))
