@@ -56,7 +56,7 @@ const size_t num_testnet_hard_forks = sizeof(testnet_hard_forks) / sizeof(testne
 const hardfork_t stagenet_hard_forks[] = {
   // version 7 from the start of the blockchain
   { 7, 1, 0, 1519605000 },
-  { 12, 700, 0, 1549318761 },
+  { 12, 420, 0, 1549318761 },
 //  { 13, 1001, 0, 1559292691 },
 //  { 14, 1020, 0, 1559292774 },
 //  { 15, 1040, 0, 1573280497 },
